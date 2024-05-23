@@ -26,10 +26,11 @@ export default function NavBar() {
     // ])
 
     const navigation = [
-        { name: 'Dashboard', href: '#' },
-        { name: 'Team', href: '#' },
-        { name: 'Projects', href: '#' },
-        { name: 'Calendar', href: '#' },
+        { name: 'Home', href: '#' },
+        { name: 'About Us', href: '#' },
+        { name: 'Our Services', href: '#' },
+        { name: 'Our Locations', href: '#' },
+        { name: 'Contact Us', href: '#' },
     ]
 
     useEffect(() => {
@@ -51,9 +52,9 @@ export default function NavBar() {
                 <>
                     <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
                         <div className='relative flex h-16 items-center justify-between'>
-                            <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
+                            <div className='flex items-center sm:hidden'>
                                 {/* Mobile menu button*/}
-                                <DisclosureButton className='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'>
+                                <DisclosureButton className='relative inline-flex items-center justify-center rounded-md p-2 text-black hover:bg-translucent-red focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'>
                                     <span className='absolute -inset-0.5' />
                                     <span className='sr-only'>
                                         Open main menu
@@ -80,16 +81,16 @@ export default function NavBar() {
                                     />
                                 </div>
                                 <div className='hidden sm:ml-6 sm:block'>
-                                    <div className='flex space-x-4'>
+                                    <div className='flex space-x-2 md:space-x-4'>
                                         {navigation.map((item, index) => (
                                             <a
                                                 key={item.name}
                                                 href={item.href}
                                                 className={classNames(
                                                     isActive === item.name
-                                                        ? 'bg-gray-900 text-white'
-                                                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                    'rounded-md px-3 py-2 text-sm font-medium'
+                                                        ? 'bg-black text-white'
+                                                        : 'text-black hover:bg-translucent-red',
+                                                    'rounded-md px-3 py-2 text-center text-sm font-medium'
                                                 )}
                                                 aria-current={
                                                     isActive
@@ -107,10 +108,10 @@ export default function NavBar() {
                                     </div>
                                 </div>
                             </div>
-                            <div className='absolute inset-y-0 right-0 flex items-center pr-1 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
+                            <div className='flex items-center pr-1 sm:ml-6 sm:pr-0'>
                                 <a
                                     href='#'
-                                    className='relative rounded-md bg-gray-900 text-white hover:bg-gray-700 px-3 py-2 text-xs font-normal sm:text-sm sm:font-medium'
+                                    className='relative rounded-md w-min text-center bg-black text-white hover:bg-translucent-red hover:text-black px-2 py-1 text-sm font-normal md:w-max md:px-3 md:py-2 md:font-medium'
                                 >
                                     Book an appointment
                                 </a>
@@ -127,8 +128,8 @@ export default function NavBar() {
                                     href={item.href}
                                     className={classNames(
                                         isActive === item.name
-                                            ? 'bg-gray-900 text-white'
-                                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                            ? 'bg-black text-white'
+                                            : 'text-black hover:bg-translucent-red',
                                         'block rounded-md px-3 py-2 text-base font-medium'
                                     )}
                                     aria-current={isActive ? 'page' : undefined}
