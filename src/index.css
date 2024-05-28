@@ -5,6 +5,7 @@
 @layer base {
     :root {
         --textshadow-black: 0 0 0;
+        --textshadow-white: 255 255 255;
     }
 }
 
@@ -22,4 +23,5 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* color: #dc35454d; */
+    /* color: #0000005e; */
 }
