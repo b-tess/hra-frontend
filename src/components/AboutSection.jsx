@@ -7,13 +7,13 @@ function AboutSection() {
     return (
         <section>
             <h1 className='mt-5 text-center text-4xl'>Who We Are</h1>
-            <section className='grid grid-cols-3 grid-rows-2 gap-y-1'>
-                <div className='col-span-3 flex flex-col items-center justify-center'>
+            <section className='grid grid-cols-1 lg:grid-cols-3 grid-rows-4 lg:grid-rows-2 gap-y-1'>
+                <div className='lg:col-span-3 flex flex-col items-center justify-center'>
                     <h2 className='text-xl text-center'>
-                        <RiSearchEyeLine className='inline text-4xl' /> Our
-                        Vision
+                        <RiSearchEyeLine className='inline text-5xl text-bright-red' />{' '}
+                        Our Vision
                     </h2>
-                    <p className='w-3/5 text-center'>
+                    <p className='p-3 lg:p-0 lg:w-3/5 text-center'>
                         Proident culpa excepteur aliquip quis cillum sint
                         laboris. Eu nostrud ut consequat ut exercitation
                         occaecat quis ullamco culpa nisi. Nulla enim laboris
@@ -21,9 +21,10 @@ function AboutSection() {
                         cupidatat aliquip fugiat.
                     </p>
                 </div>
-                <div className='flex flex-col items-center justify-start'>
+                <div className='flex flex-col items-center justify-center lg:justify-start'>
                     <h2 className='text-xl text-center'>
-                        <GiOnTarget className='inline text-4xl' /> Our Mission
+                        <GiOnTarget className='inline text-5xl text-bright-red' />{' '}
+                        Our Mission
                     </h2>
                     <p className='p-3 text-center'>
                         Incididunt est amet occaecat nisi veniam laboris magna
@@ -33,10 +34,10 @@ function AboutSection() {
                         culpa qui exercitation fugiat consectetur dolor.
                     </p>
                 </div>
-                <div className='flex flex-col items-center justify-start'>
+                <div className='flex flex-col items-center justify-center lg:justify-start'>
                     <h2 className='text-xl text-center'>
-                        <FaHandHoldingHeart className='inline text-4xl' /> Our
-                        Values
+                        <FaHandHoldingHeart className='inline text-5xl text-bright-red' />{' '}
+                        Our Values
                     </h2>
                     <p className='p-3 text-center'>
                         Laborum anim aliqua duis Lorem cillum qui officia do
@@ -50,10 +51,10 @@ function AboutSection() {
                         sint anim excepteur ad amet.
                     </p>
                 </div>
-                <div className='flex flex-col items-center justify-start'>
+                <div className='flex flex-col items-center justify-center lg:justify-start'>
                     <h2 className='text-xl text-center'>
-                        <LiaPeopleCarrySolid className='inline text-4xl' /> Our
-                        Culture
+                        <LiaPeopleCarrySolid className='inline text-5xl text-bright-red' />{' '}
+                        Our Culture
                     </h2>
                     <p className='p-3 text-center'>
                         Occaecat incididunt aute enim irure est do ut esse sunt
