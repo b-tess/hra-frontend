@@ -36,6 +36,9 @@ export default {
             gridTemplateRows: {
                 auto: 'auto',
             },
+            height: {
+                100: '400px',
+            },
         },
     },
     plugins: [
