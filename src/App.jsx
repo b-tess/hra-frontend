@@ -3,6 +3,7 @@ import HeroSection from './components/HeroSection'
 import AboutSection from './components/AboutSection'
 import AssistanceSection from './components/AssistanceSection'
 import ServicesSection from './components/ServicesSection'
+import ContactUsSection from './components/ContactUsSection'
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
             <AboutSection />
             <AssistanceSection />
             <ServicesSection />
+            <ContactUsSection />
             <p className='text-red-800'>This is a test.</p>
         </>
     )
