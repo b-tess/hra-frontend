@@ -1,6 +1,6 @@
 function ServicesSection() {
     return (
-        <div>
+        <div id='services'>
             <h2 className='my-5 text-3xl text-center'>What We Do</h2>
             <section>
                 <div className='flex flex-col lg:flex-row gap-2 mb-2'>

@@ -5,7 +5,7 @@ import { RiTimeFill } from 'react-icons/ri'
 
 function ContactUsSection() {
     return (
-        <section>
+        <section id='contact-us'>
             <h2 className='my-5 text-3xl text-center'>Contact Us</h2>
             <div className='grid grid-cols-1 lg:grid-cols-2 grid-rows-2 lg:grid-rows-1 gap-y-3'>
                 <div className='flex flex-col gap-3 px-3'>

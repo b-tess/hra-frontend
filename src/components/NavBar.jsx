@@ -27,10 +27,10 @@ export default function NavBar() {
 
     const navigation = [
         { name: 'Home', href: '#' },
-        { name: 'About Us', href: '#' },
-        { name: 'Our Services', href: '#' },
+        { name: 'About Us', href: '#about-us' },
+        { name: 'Our Services', href: '#services' },
         { name: 'Our Locations', href: '#' },
-        { name: 'Contact Us', href: '#' },
+        { name: 'Contact Us', href: '#contact-us' },
     ]
 
     useEffect(() => {

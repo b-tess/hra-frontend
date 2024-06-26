@@ -24,7 +24,7 @@ function AssistanceSection() {
                     We can help with all that and more...
                 </p>
                 <a
-                    href='#'
+                    href='#contact-us'
                     className='bg-white rounded-md px-3 py-2 text-black text-center font-medium'
                 >
                     Contact Us

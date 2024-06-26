@@ -5,7 +5,7 @@ import { LiaPeopleCarrySolid } from 'react-icons/lia'
 
 function AboutSection() {
     return (
-        <section>
+        <section id='about-us'>
             <h1 className='mt-5 text-center text-4xl'>Who We Are</h1>
             <section className='grid grid-cols-1 lg:grid-cols-3 grid-rows-4 lg:grid-rows-2 gap-y-1'>
                 <div className='lg:col-span-3 flex flex-col items-center justify-center'>
