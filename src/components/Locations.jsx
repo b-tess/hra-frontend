@@ -1,6 +1,6 @@
 function Locations() {
     return (
-        <section>
+        <section id='locations'>
             <h2 className='my-5 text-3xl text-center'>Our Locations</h2>
             <div className='grid grid-cols-1 lg:grid-cols-2 grid-rows-2 lg:grid-rows-1 gap-y-3 lg:gap-x-3 px-3 mb-3'>
                 <section>

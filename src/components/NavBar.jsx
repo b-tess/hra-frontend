@@ -29,7 +29,7 @@ export default function NavBar() {
         { name: 'Home', href: '#' },
         { name: 'About Us', href: '#about-us' },
         { name: 'Our Services', href: '#services' },
-        { name: 'Our Locations', href: '#' },
+        { name: 'Our Locations', href: '#locations' },
         { name: 'Contact Us', href: '#contact-us' },
     ]
 
