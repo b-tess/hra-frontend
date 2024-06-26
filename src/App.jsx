@@ -4,6 +4,7 @@ import AboutSection from './components/AboutSection'
 import AssistanceSection from './components/AssistanceSection'
 import ServicesSection from './components/ServicesSection'
 import ContactUsSection from './components/ContactUsSection'
+import Locations from './components/Locations'
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <AssistanceSection />
             <ServicesSection />
             <ContactUsSection />
+            <Locations />
             <p className='text-red-800'>This is a test.</p>
         </>
     )
