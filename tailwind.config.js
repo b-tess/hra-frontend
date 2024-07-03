@@ -33,6 +33,9 @@ export default {
                 'custom-black': '2px 0 5px rgb(var(--textshadow-black))',
                 'custom-white': '0 0.5px 1px rgb(var(--textshadow-white))',
             },
+            boxShadow: {
+                diff: '0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3)',
+            },
             gridTemplateRows: {
                 auto: 'auto',
             },

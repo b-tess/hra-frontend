@@ -5,6 +5,7 @@ import AssistanceSection from './components/AssistanceSection'
 import ServicesSection from './components/ServicesSection'
 import ContactUsSection from './components/ContactUsSection'
 import Locations from './components/Locations'
+import AppointmentForm from './components/AppointmentForm'
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             <ServicesSection />
             <ContactUsSection />
             <Locations />
+            <AppointmentForm />
             <p className='text-red-800'>This is a test.</p>
         </>
     )
