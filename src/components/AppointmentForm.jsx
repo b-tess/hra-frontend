@@ -6,14 +6,13 @@ import {
     setMinutes,
 } from 'react-datepicker/dist/date_utils.d.ts'
 import 'react-datepicker/dist/react-datepicker.css'
+import { GoCalendar } from 'react-icons/go'
 import emailjs from '@emailjs/browser'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
 function AppointmentForm() {
-    const [startDate, setStartDate] = useState(
-        setHours(setMinutes(new Date(), 30), 8)
-    )
+    const [startDate, setStartDate] = useState(null)
     // const [formData, setFormData] = useState({
     //     firstName: '',
     //     lastName: '',
@@ -26,13 +25,13 @@ function AppointmentForm() {
     //Destructure the form data
     // const { firstName, lastName, nationalId, location, phone, email } = formData
 
-    // console.log(startDate.toString())
     const formSchema = Yup.object().shape({
         firstName: Yup.string().required('Required.'),
         lastName: Yup.string().required('Required.'),
         nationalId: Yup.string()
             .matches(/^[0-9]+$/, 'Must only be numbers.')
             .required('Required.'),
+        location: Yup.string().required(),
         phone: Yup.string()
             .matches(/^[0-9]+$/, 'Must only be numbers.')
             .required('Required.'),
@@ -43,6 +42,7 @@ function AppointmentForm() {
 
     const formik = useFormik({
         initialValues: {
+            startDate,
             firstName: '',
             lastName: '',
             nationalId: '',
@@ -51,7 +51,7 @@ function AppointmentForm() {
             email: '',
         },
         validationSchema: formSchema,
-        onSubmit: (values) => {
+        onSubmit: (values, { resetForm }) => {
             // console.log(values)
             const data = {
                 ...values,
@@ -60,9 +60,14 @@ function AppointmentForm() {
 
             // console.log(data)
             emailjs
-                .send('service_n2x11u4', 'appointment_form', data, {
-                    publicKey: 'S-_0riTS3Vhw-OG-_',
-                })
+                .send(
+                    import.meta.env.VITE_EMAILJS_SERVICE_ID_KILIMANI,
+                    import.meta.env.VITE_EMAILJS_TEMPLATE_ID_KILIMANI,
+                    data,
+                    {
+                        publicKey: import.meta.env.VITE_PUBLIC_KEY_KILIMANI,
+                    }
+                )
                 .then(
                     (response) => {
                         console.log(
@@ -75,6 +80,9 @@ function AppointmentForm() {
                         console.log('Email not sent.', error)
                     }
                 )
+
+            resetForm()
+            setStartDate(null)
         },
     })
 
@@ -140,6 +148,11 @@ function AppointmentForm() {
                         value={formik.values.firstName}
                         onChange={formik.handleChange}
                     />
+                    {formik.errors.firstName && formik.touched.firstName ? (
+                        <p className='text-bright-red'>
+                            *{formik.errors.firstName}
+                        </p>
+                    ) : null}
                 </div>
                 <div className='flex flex-col'>
                     <label htmlFor='lastName'>Last Name</label>
@@ -152,9 +165,14 @@ function AppointmentForm() {
                         value={formik.values.lastName}
                         onChange={formik.handleChange}
                     />
+                    {formik.errors.lastName && formik.touched.lastName ? (
+                        <p className='text-bright-red'>
+                            *{formik.errors.lastName}
+                        </p>
+                    ) : null}
                 </div>
                 <div className='flex flex-col'>
-                    <label htmlFor='nationalId'>National ID</label>
+                    <label htmlFor='nationalId'>National ID/Passport No</label>
                     <input
                         className='py-2 bg-inherit text-black shadow-diff rounded-md focus:outline-none focus:ring-1 focus:ring-black'
                         type='text'
@@ -164,6 +182,11 @@ function AppointmentForm() {
                         value={formik.values.nationalId}
                         onChange={formik.handleChange}
                     />
+                    {formik.errors.nationalId && formik.touched.nationalId ? (
+                        <p className='text-bright-red'>
+                            *{formik.errors.nationalId}
+                        </p>
+                    ) : null}
                 </div>
                 <div className='flex flex-col'>
                     <label htmlFor='location'>Location</label>
@@ -178,6 +201,11 @@ function AppointmentForm() {
                         <option value='Parklands'>Parklands</option>
                         <option value='Kilimani'>Kilimani</option>
                     </select>
+                    {formik.errors.location && formik.touched.location ? (
+                        <p className='text-bright-red'>
+                            *{formik.errors.location}
+                        </p>
+                    ) : null}
                 </div>
                 <div className='flex flex-col'>
                     <label htmlFor='phone'>Phone Number</label>
@@ -190,6 +218,11 @@ function AppointmentForm() {
                         value={formik.values.phone}
                         onChange={formik.handleChange}
                     />
+                    {formik.errors.phone && formik.touched.phone ? (
+                        <p className='text-bright-red'>
+                            *{formik.errors.phone}
+                        </p>
+                    ) : null}
                 </div>
                 <div className='flex flex-col'>
                     <label htmlFor='email'>Email</label>
@@ -202,6 +235,11 @@ function AppointmentForm() {
                         value={formik.values.email}
                         onChange={formik.handleChange}
                     />
+                    {formik.errors.email && formik.touched.email ? (
+                        <p className='text-bright-red'>
+                            *{formik.errors.email}
+                        </p>
+                    ) : null}
                 </div>
                 <div className='flex flex-col gap-2 items-start md:flex-row md:items-center md:col-span-2'>
                     <DatePicker
@@ -214,6 +252,10 @@ function AppointmentForm() {
                         dateFormat={'MMMM d, yyyy h:mm aa'}
                         filterTime={filterPassedTime}
                         placeholderText='Select appointment time'
+                        required
+                        autoComplete='off'
+                        showIcon
+                        icon={<GoCalendar />}
                         id='date-picker'
                         className='py-2 bg-inherit text-black shadow-diff rounded-md focus:outline-none focus:ring-1 focus:ring-black'
                     />
