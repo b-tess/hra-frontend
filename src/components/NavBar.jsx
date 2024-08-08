@@ -110,7 +110,7 @@ export default function NavBar() {
                             </div>
                             <div className='flex items-center pr-1 sm:ml-6 sm:pr-0'>
                                 <a
-                                    href='#'
+                                    href='#appointment-form'
                                     className='relative rounded-md w-min text-center bg-black text-white hover:bg-translucent-red hover:text-black px-2 py-1 text-sm font-normal md:w-max md:px-3 md:py-2 md:font-medium'
                                 >
                                     Book an appointment

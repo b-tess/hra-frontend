@@ -13,31 +13,20 @@ import * as Yup from 'yup'
 
 function AppointmentForm() {
     const [startDate, setStartDate] = useState(null)
-    // const [formData, setFormData] = useState({
-    //     firstName: '',
-    //     lastName: '',
-    //     nationalId: '',
-    //     location: '',
-    //     phone: '',
-    //     email: '',
-    // })
-
-    //Destructure the form data
-    // const { firstName, lastName, nationalId, location, phone, email } = formData
 
     const formSchema = Yup.object().shape({
-        firstName: Yup.string().required('Required.'),
-        lastName: Yup.string().required('Required.'),
+        firstName: Yup.string().required('Please fill in this field.'),
+        lastName: Yup.string().required('Please fill in this field.'),
         nationalId: Yup.string()
-            .matches(/^[0-9]+$/, 'Must only be numbers.')
-            .required('Required.'),
-        location: Yup.string().required(),
+            .matches(/^[0-9]+$/, 'Please enter a valid ID/Passport number.')
+            .required('Please fill in this field.'),
+        location: Yup.string().required('Please fill in this field.'),
         phone: Yup.string()
-            .matches(/^[0-9]+$/, 'Must only be numbers.')
-            .required('Required.'),
+            .matches(/^[0-9]+$/, 'Please enter a valid phone number.')
+            .required('Please fill in this field.'),
         email: Yup.string()
-            .email('Must be a valid email.')
-            .required('Required.'),
+            .email('Please enter a valid email.')
+            .required('Please fill in this field.'),
     })
 
     const formik = useFormik({
@@ -98,40 +87,11 @@ function AppointmentForm() {
         return currentDate.getTime() < selectedDate.getTime()
     }
 
-    // function handleChange(e) {
-    //     setFormData((prevState) => ({
-    //         ...prevState,
-    //         [e.target.id]: e.target.value,
-    //     }))
-    // }
-
-    // function handleSubmit(e) {
-    //     e.preventDefault()
-
-    //     const data = {
-    //         ...formData,
-    //         startDate: startDate.toString(),
-    //     }
-
-    //     emailjs
-    //         .send('service_n2x11u4', 'appointment_form', data, {
-    //             publicKey: 'S-_0riTS3Vhw-OG-_',
-    //         })
-    //         .then(
-    //             (response) => {
-    //                 console.log(
-    //                     'Email sent successfully.',
-    //                     response.status,
-    //                     response.text
-    //                 )
-    //             },
-    //             (error) => {
-    //                 console.log('Email not sent.', error)
-    //             }
-    //         )
-    // }
     return (
-        <section className='flex flex-col justify-center items-center'>
+        <section
+            id='appointment-form'
+            className='flex flex-col justify-center items-center'
+        >
             <h2 className='my-5 text-3xl text-center'>Book An Appointment</h2>
             <form
                 className='w-4/5 grid grid-cols-1 grid-rows-8 md:grid-cols-2 md:grid-rows-5 gap-2 border rounded-lg border-black p-3'
