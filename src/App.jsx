@@ -7,6 +7,7 @@ import ContactUsSection from './components/ContactUsSection'
 import Locations from './components/Locations'
 import AppointmentForm from './components/AppointmentForm'
 import GroupInvite from './components/GroupInvite'
+import Footer from './components/Footer'
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
             <AppointmentForm />
             <GroupInvite />
             <p className='text-red-800'>This is a test.</p>
+            <Footer />
         </>
     )
 }
