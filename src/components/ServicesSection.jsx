@@ -91,6 +91,28 @@ function ServicesSection() {
                         </p>
                     </div>
                 </div>
+                <div className='flex flex-col lg:flex-row gap-2 mb-2'>
+                    <div className='flex-1 flex flex-col justify-center items-center gap-y-2'>
+                        <h3 className='font-bold text-center text-2xl'>
+                            Speciality Consultations
+                        </h3>
+                        <p className='text-center text-base px-3'>
+                            Eiusmod do ea ullamco sint sunt ex sunt occaecat
+                            voluptate. Exercitation et ullamco ipsum aute ut id
+                            non do ipsum ea. Reprehenderit eu excepteur sit
+                            aliquip in consectetur non tempor elit anim duis.
+                            Proident proident et ullamco aute proident.
+                        </p>
+                    </div>
+                    <div className='flex-1 flex justify-center items-center'>
+                        <img
+                            loading='lazy'
+                            src='../../hra-specialities.jpeg'
+                            alt='A representation of specialist consultations in Borromean rings.'
+                            className='h-64 lg:h-100'
+                        />
+                    </div>
+                </div>
                 <div className='flex flex-col justify-center items-center gap-y-1'>
                     <h3 className='font-medium text-center text-xl text-bright-red'>
                         Other services include...
