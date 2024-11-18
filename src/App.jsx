@@ -21,7 +21,6 @@ function App() {
             <Locations />
             <AppointmentForm />
             <GroupInvite />
-            <p className='text-red-800'>This is a test.</p>
             <Footer />
         </>
     )
