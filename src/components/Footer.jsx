@@ -4,7 +4,7 @@ import { PiCopyrightLight } from 'react-icons/pi'
 
 function Footer() {
     return (
-        <footer className='w-full grid md:grid-flow-row auto-rows-auto md:auto-rows-min grid-cols-1 md:grid-cols-3 bg-black text-white py-5'>
+        <footer className='w-full mt-4 grid auto-rows-auto grid-cols-1 md:grid-cols-3 bg-black text-white py-5'>
             <div className='flex flex-col justify-center gap-y-3'>
                 <div className='flex justify-center items-center'>
                     <img
